@@ -13,3 +13,20 @@ const Mask = {
     return value
   }
 }
+
+const Copy = {
+  input: document.querySelector('#signature-input'),
+  button: document.querySelector('#signature-button'),
+  message: document.querySelector('.success'),
+  copyThis() {
+    this.input.select()
+    document.execCommand('Copy')
+    this.successMessage()
+  },
+  successMessage() {
+    this.message.classList.add('active')
+    setTimeout(() => {
+      this.message.classList.remove('active')
+    }, 2000)
+  }
+}
