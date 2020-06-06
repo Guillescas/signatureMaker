@@ -1,0 +1,88 @@
+{% extends 'layout.njk' %}
+
+{% set pageId = "page-fields" %}
+
+{% block title %}
+  <title>Criar ponto de coleta</title>
+{% endblock title %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/styles/fields.css">
+{% endblock styles %}
+
+{% block content %}
+  {% include 'parts/header.njk' %}
+
+  <form action="">
+
+    <h1>Inserir dados</h1>
+
+    <fieldset>
+      <legend>
+        <h2>Dados do funcionário</h2>
+      </legend>
+
+      <div class="field-group">
+        <div class="field">
+          <label for="name">Nome</label>
+          <input 
+            type="text" 
+            name="name" 
+            required="required"
+          >
+        </div>
+      </div>
+
+      <div class="field-group second">
+        <div class="field" style="width: 160%;">
+          <label for="job">Cargo</label>
+          <input 
+            type="text" 
+            name="job" 
+            placeholder="Ex: Gerente - WebTrip" 
+            required="required"
+          >
+        </div>
+        <div class="field">
+          <label for="phone">Telefone (fixo)</label>
+          <input 
+            type="text" 
+            name="phone" 
+            required="required"
+            maxlength="14"
+            onkeydown="Mask.apply(this, 'phone')"
+            placeholder="(12) 1234-5678"
+          >
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="field" style="width: 30%;">
+          <label for="branch">Ramal</label>
+          <input 
+            type="text"
+            name="branch" 
+            placeholder="Ex: 321" 
+            required="required"
+            maxlength="3"
+          >
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input 
+            type="email"
+            name="email"
+            required="required"
+            placeholder="example@example.com"
+          >
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit">Gerar assinatura</button>
+  </form>
+{% endblock %}
+
+{% block scripts %}
+  <script src="scripts/page-fields.js"></script>
+{% endblock scripts %}

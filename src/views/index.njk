@@ -1,0 +1,28 @@
+{% extends 'layout.njk' %}
+
+{% set pageId = "page-home" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/styles/home.css">
+  <link rel="stylesheet" href="/styles/modal.css">
+{% endblock styles %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+  <header class="home-header">
+    <h1>Signature maker</h1>
+  </header>
+
+  <main>
+    <h2>Aqui você pode atualizar ou criar uma nova assinatura para o funcionário que você quiser!</h2>
+
+    <p>Clique no botão abaixo e preencha os campos necessários</p>
+  
+    <a href="/fields">
+      <strong>Bora!</strong>
+    </a>
+  </main>
+{% endblock %}
+
