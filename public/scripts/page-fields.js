@@ -17,7 +17,7 @@ const Mask = {
 const Copy = {
   input: document.querySelector('#signature-input'),
   button: document.querySelector('#signature-button'),
-  message: document.querySelector('.success'),
+  message: document.querySelector('.copy-success'),
   copyThis() {
     this.input.select()
     document.execCommand('Copy')
@@ -26,7 +26,7 @@ const Copy = {
   successMessage() {
     this.message.classList.add('active')
     setTimeout(() => {
-      this.message.classList.remove('active')
-    }, 2000)
+    this.message.classList.remove('active')
+    }, 3000)
   }
 }

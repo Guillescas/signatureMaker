@@ -1,19 +1,20 @@
 {% extends 'layout.njk' %}
 
-{% set pageId = "page-fields" %}
+{% set pageId = "page-generate" %}
 
 {% block title %}
-  <title>Criar ponto de coleta</title>
+  <title>Editar</title>
 {% endblock title %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/styles/fields.css">
+  <link rel="stylesheet" href="/styles/generate.css">
+  <link rel="stylesheet" href="/styles/messages.css">
 {% endblock styles %}
 
 {% block content %}
   {% include 'parts/header.njk' %}
 
-  <form action="">
+  <form action="/generate" method="POST">
 
     <h1>Inserir dados</h1>
 
@@ -34,7 +35,7 @@
       </div>
 
       <div class="field-group second">
-        <div class="field" style="width: 160%;">
+        <div class="field" id="job">
           <label for="job">Cargo</label>
           <input 
             type="text" 
@@ -57,7 +58,7 @@
       </div>
 
       <div class="field-group">
-        <div class="field" style="width: 30%;">
+        <div class="field" id="branch">
           <label for="branch">Ramal</label>
           <input 
             type="text"
@@ -81,6 +82,29 @@
 
     <button type="submit">Gerar assinatura</button>
   </form>
+
+  <header class="outside-title">
+    <h3>Código da assinatura:</h3>
+    <h3 class="copy-success" id="success-element">Texto copiado com sucesso!</h3>
+  </header>
+
+  <div class="copy-area">
+    <input
+      type="text"
+      name="search"
+      readonly=“true”
+      value="{{signature}}"
+      id="signature-input"
+      placeholder='Preencha os campos acima e clique em "Gerar assinatura"'
+    >
+    <button onclick="Copy.copyThis()">
+      <img src="/assets/copy.svg" alt="Copiar" href="" id="signature-button">
+      <p>Copiar</p>
+    </button>
+  </div>
+
+
+
 {% endblock %}
 
 {% block scripts %}

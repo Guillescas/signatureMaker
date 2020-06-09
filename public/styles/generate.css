@@ -1,18 +1,18 @@
-#page-fields {
+#page-generate {
   width: 90%;
   max-width: 1100px;
 
   margin: 0 auto;
 }
 
-#page-fields header {
+#page-generate header {
   margin-top: 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#page-fields header a {
+#page-generate header a {
   color: var(--title-color);
   font-weight: bold;
 
@@ -21,7 +21,7 @@
 
 }
 
-#page-fields header a span {
+#page-generate header a span {
   margin-right: 16px;
 
   background-image: url(../assets/arrow-left.svg);
@@ -35,7 +35,7 @@
 form {
   background-color: white;
 
-  margin: 80px auto;
+  margin: 80px auto 32px auto;
   padding: 64px;
 
   border-radius: 8px;
@@ -86,8 +86,17 @@ form .field-group {
   display: flex;
 }
 
+#page-generate form .field-group.second #job {
+  width: 160%;
+}
+
+#page-generate form .field-group.third #branch {
+  width: 30%;
+}
+
 form input,
-form select {
+form select,
+#page-generate input {
   background-color: var(--background-color);
 
   border: 0;
@@ -102,7 +111,7 @@ form select {
   transition: 300ms;
 }
 
-form input:focus {
+#page-generate form input:focus {
   border-bottom: 2px solid var(--primary-color);
 }
 
@@ -187,4 +196,82 @@ form button:hover {
 .items-grid li img,
 .items-grid li span {
   pointer-events: none;
+}
+
+#page-generate .outside-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 730px;
+  width: 100%;
+
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
+
+#page-generate legend h3 {
+  max-width: 730px;
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
+
+#page-generate .copy-area {
+  display: flex;
+
+  max-width: 730px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+#page-generate .copy-area input {
+  flex: 1;
+
+  background-color: white;
+
+  border-radius: 8px 0 0 8px;
+  border: 0;
+
+  padding: 16px 24px;
+
+  font-size: 16px;
+  color: #6c6c80;
+}
+
+#page-generate .copy-area button {
+  width: 72px;
+  height: 72px;
+
+  background-color: var(--primary-color);
+
+  border: 0;
+  border-radius: 0 8px 8px 0;
+
+  color: white;
+
+  outline: none;
+}
+
+#page-generate .copy-area button p {
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.copy-success {
+  display: none;
+}
+
+.copy-success.active {
+  display: initial;
+}
+
+.show-signature-content section {
+  background-color: white;
+
+  margin: 8px auto 32px auto;
+  padding: 64px;
+
+  border-radius: 8px;
+
+  max-width: 730px;
 }
