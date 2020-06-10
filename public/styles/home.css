@@ -56,13 +56,16 @@
 }
 
 #page-home .webtrip {
+  margin-top: 32px;
+
   display: flex;
   align-items: center;
 }
 
-#page-home .webtrip img {
-  width: 32px;
-  height: 32px;
+#page-home img {
+  margin-top: 16px;
+  width: 48px;
+  height: 48px;
 
   margin-left: 8px;
 }
@@ -70,7 +73,7 @@
 #page-home main p {
   font-size: 24px;
   line-height: 38px;
-  margin-top: 128px;
+  margin-top: 80px;
 }
 
 #page-home main a {
@@ -91,7 +94,7 @@
 }
 
 #page-home main a:hover {
-  background-color: #2fb86e;
+  background-color: var(--hoverBtn-color);
 }
 
 #page-home main a span {
